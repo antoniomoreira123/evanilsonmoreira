@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <header class="center"><!--area fixa superior da pagina onde vai conter o menu para interação-->
+        <div onclick="sobre()" style="margin-left: 20%;">SOBRE</div> <!--menu sobre-->
+        <div onclick="formacao()" >FORMAÇÃO</div> <!--menu formação-->
+        <div onclick="portifolio()" >PORTIFÓLIO</div> <!--menu portifólio-->
+        <div onclick="contato()" >CONTATO</div> <!--menu contato-->
+    </header>
+   
+    <div class="center2" style="margin-left: 40%;"> <!--área que vai conter as informações de texto conforme o menu é selecionado-->
+        <label id="infor" style="width: 70%; height: 40%;" class="center2"></a></label> <!--campo que recebe as informações de texto conforme o menu selecionado-->
+    </div>
+   
+    <div style="margin-left: 40%;"></div> <!--área que vai conter form-->
+        <form id="ctt" style="margin-left: 40%; display: none;"><!--form de contato com os campos-->
+            <div><!--div com capo nome e label nome pra identificar o campo-->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" />
+            </div>
+            <div style="margin-left: 10px;">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" /><!--valida pelo type se está no formato de e-mail-->
+            </div>
+            <div style="margin-left: 10px;">
+                <label for="msg">Mensagem:</label>
+                <input id="msg"></input>
+            </div>
+            <div style="margin-left: 10px;">
+                <button>ENVIAR</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    function sobre(el) {//função que adiciona informações no campo de informação referente ao menu selecionado.
+        document.getElementById('infor').innerHTML = "Sou um TI atleta, nas horas vagas gosto de jogar football.";
+        //adiciona o texto referente ao menu selecionado.  
+    }
+    function formacao(el) {
+        document.getElementById('infor').innerHTML = "Formando em análise e desenvolvimento de sistemas.";
+         //adiciona o texto referente ao menu selecionado.    
+    }
+
+    function portifolio(el) {
+        document.getElementById('infor').innerHTML = "https://github.com/topics/java-para-iniciantes";
+         //adiciona o texto referente ao menu selecionado.   
+    }
+    function contato(el) {
+        var display1 = document.getElementById('ctt').style.display;
+           
+        if(display1 == "none") {
+            document.getElementById('ctt').style.display = 'block';//exibe o formulário
+        } else {
+            document.getElementById('ctt').style.display = 'none';//esconde o formulário
+        }
+          
+    }
+    </script>
